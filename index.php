@@ -6,14 +6,12 @@
     </head>
     <body>
         <?php
-        
         require_once 'Example.php';
         try {
             echo Example::getWeather("Voronezh");
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }
-                
         ?>
     </body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+
 require 'vendor/autoload.php';
 
 /**
@@ -6,30 +7,38 @@ require 'vendor/autoload.php';
  *
  * @author Svetlana Ivanova <svetlana.ivanova@esteit.com>
  */
-class Example {
+class Example
+{
 
     /**
      * @return boolean
      */
-    public function someMethod() {
+    public function falseMethod()
+    {
         return false;
     }
 
     /**
      * @return boolean
      */
-    public function otherMethod() {
+    public function trueMethod()
+    {
         return true;
     }
 
-    public static function getWeather($city) {
-        try {
-            $browser = new Buzz\Browser();
-            $response = $browser->get('http://api.openweathermap.org/data/2.5/weather?q=' . $city);
-            return $response;
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
-        }
+    /**
+     * @assert ("Voronezh") == expectedResult
+     * @assert ("Moscow") == expectedResult
+     * @assert ("") == expectedResult
+     * @assert (1) == expectedResult
+     * @param type $city
+     * @return type
+     */
+    public static function getWeather($city)
+    {
+        $browser = new Buzz\Browser();
+        $response = $browser->get('http://api.openweathermap.org/data/2.5/weather?q=' . $city);
+        return $response->getContent();
     }
 
 }
