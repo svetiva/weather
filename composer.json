@@ -1,0 +1,16 @@
+{
+    "name": "vendor/wheather",
+    "description": "Описание проекта Wheather.",
+    "authors": [
+        {
+            "name": "svetlana",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "kriswallsmith/buzz": "@stable"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}
